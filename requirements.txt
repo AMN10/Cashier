@@ -3,3 +3,4 @@ pycryptodome==3.20.0
 pygame==2.5.2
 Pillow==10.3.0
 pywin32==306
+sqlite3==0.0.1

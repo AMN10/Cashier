@@ -24,6 +24,87 @@ This system streamlines order management, inventory tracking, and shift-based sa
 | pygame         | Sound effects                       |
 | win32print     | Printing invoices (Windows only)    |
 
+---
+
+## 📝 Program Startup & Credential File Setup Guide
+
+### 1. How to Run the Program:
+
+**Step 1:** Make sure all required libraries are installed using the `requirements.txt` file:
+
+```bash
+pip install -r requirements.txt
+```
+
+**Step 2:** Launch the application by running the `developer.py` file:
+
+```bash
+python developer.py
+```
+
+**Step 3:** On the first launch, the program will automatically create a hidden folder at:  
+`AppData\Roaming\Nassar`, which includes the following files:
+
+- `secret.key` – the encryption key  
+- `credentials.enc` – encrypted login credentials  
+- `access_log.txt` – logs of all system access and updates
+
+---
+
+### 2. Creating Login Credentials:
+
+- Default developer password: `1a2h3m4e5d` *(can be changed in the code)*
+
+**To create new login credentials:**
+
+1. Enter the developer password in the designated field  
+2. After successful verification, input a new system username and password  
+3. Click the **"Update"** button to securely save the encrypted data
+
+---
+
+### 3. Important Security Notes:
+
+- Credentials are encrypted and stored in `credentials.enc`  
+- All files and folders are automatically hidden in Windows  
+- After **3 failed attempts**, the login field will be locked for **5 minutes**  
+- All login and credential updates are logged in `access_log.txt`
+
+---
+
+### 4. Troubleshooting:
+
+**If files do not appear after launching the program:**
+
+- Check if the folder `AppData\Roaming\Nassar` exists  
+- Make sure the application has permission to write to the AppData directory
+
+**If encryption errors occur:**
+
+- Delete the files `secret.key` and `credentials.enc`, then restart the program to regenerate them
+
+---
+
+### 5. Sample Access Log (`access_log.txt`):
+
+```
+2025-04-30 14:30:00 - Credentials updated for user: admin  
+2025-04-30 14:35:00 - Failed login attempt by developer  
+```
+
+---
+
+### 🎯 Extra Tips:
+
+- Store the developer password in a secure location  
+- Change the default password by updating the `DEVELOPER_PASSWORD` variable in the source code  
+- Use this software only in secure environments — **never use weak passwords**
+
+---
+
+⚠️ **Warning:** Never share your `secret.key` or `credentials.enc` files with anyone!
+
+---
 ## 📸 Screenshots
 ![Screenshot 2025-04-30 122432](https://github.com/user-attachments/assets/9e341d64-6b2c-47f8-a976-6043833a24e4)
 ![Screenshot 2025-04-30 122420](https://github.com/user-attachments/assets/bc1d0ad4-3e77-4ae9-a213-e02f134698d2)
